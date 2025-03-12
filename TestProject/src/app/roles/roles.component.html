@@ -1,0 +1,52 @@
+<!--For displaying elements we have to use interpolation and property binding.
+For 2 way data binding we only have to use ngModel.
+Data binding means showing data to the view.
+Directive ==> Structural -> ngFor,ngIf,ngClass, ngStyle,
+          ==> attribute.
+-->
+<div class="row">
+    <div class="col-3">
+        <p>{{firstName}}</p>
+    </div>
+
+    <div class="col-3">
+        <p>{{version}}</p>
+    </div>
+    
+    <div class="col-3"> 
+        <p>{{currentDate}}</p>  <!--This is interpolation -->
+    </div>
+    <div class="col-3">
+        <p>{{selectedState}}</p>
+    </div>
+</div>
+
+<div class = "row">
+    <div clas="col-3">
+        <input type="text" [value]="firstName" class="form-control" /> <!--Here value is a property binding-->
+    </div>
+    <div class="col-3">
+        <input type="text" [(ngModel)]="firstName"/> <!--2 way data binding-->
+    </div>
+    <div class="col-3">
+        <input [type]="inputType"/> <!--giving Dynamic type-->
+    </div>
+    <div class="col-3">
+        <select [(ngModel)]=" selectedState"> <!--2 way data binding for input elements.-->
+            <option value="MH"></option>
+            <option value="MP"></option>
+            <option value="Goa"></option>
+        </select>
+    </div>
+</div>
+<div class="row">
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showWelcomAlert()">Show Welcome Alert</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Welcome React')">Show React Message</button>
+    </div>
+    <div class="col-3">
+        <button class="btn btn-success" (click)="showMessage('Welcome Java tutorial')">Show Java Message</button>
+    </div>
+</div>
